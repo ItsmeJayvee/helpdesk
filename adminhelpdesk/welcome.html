@@ -7,12 +7,149 @@
     <link rel="stylesheet" href="/css/materialize.min.css">
     <title>Helpdesk Admin</title>
 </head>
-<body>
+<body class="grey darken-4">
+<nav class="black">
+    <a href="welcome.html" class="brand-logo right"><img src="/images/ssdi.png" height="55px"></a>
+    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons white-text">menu</i></a>
+</nav>
+<ul id="slide-out" class="sidenav sidenav-fixed grey darken-2">
+    <li><a href="#/newtickets!" id="newticketsBtn">New Tickets</a></li>
+    <li><a href="#/tofollow!" id="tofollowBtn">To Follow Tickets</a></li>
+    <li><a href="#/tickethistory!" id="tickethistoryBtn">Ticket History</a></li>
+    <div class="divider"></div>
+    <li><a href="#logout!" id="logoutBtn">Logout</a></li>
+</ul>
 
-    
+<div class="row" id="newtickets">
+    <div class="col m3 l3"></div>
+    <div class="col s12 m9 l9">
+        <div class="container">
+            <div class="card">
+                <div class="card-content grey darken-3">
+                    <h6 class="white-text center-align"><b>New Tickets</b></h6>
+                    <div class="divider"></div>
+                    <div class="row">
+                        <div class="col s12 m12 l12">
+                            <ul class="tabs grey darken-3">
+                                <li class="tab col s4"><a href="#high" class="active white-text">High</a></li>
+                                <li class="tab col s4"><a href="#med" class="white-text">Medium</a></li>
+                                <li class="tab col s4"><a href="#low" class="white-text">Low</a></li>
+                            </ul>
+                        </div>
+                        <div id="high" class="col s12 m12 l12">
+                            <ul id="highprio" class="collapsible popout">
+                                
+                            </ul>
+                        </div>
+                        <div id="med" class="col s12 m12 l12">
+                            <ul id="medprio" class="collapsible popout">
+                                
+                            </ul>
+                        </div>
+                        <div id="low" class="col s12 m12 l12">
+                            <ul id="lowprio" class="collapsible popout">
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row" id="tofollow">
+    <div class="col m3 l3"></div>
+    <div class="col s12 m9 l9">
+        <div class="container">
+            <div class="card">
+                <div class="card-content grey darken-3">
+                    <h6 class="white-text center-align"><b>To Follow Tickets</b></h6>
+                    <div class="divider"></div>
+                    <div class="row">
+                        <div class="col s12 m12 l12">
+                            <ul class="tabs grey darken-3">
+                                <li class="tab col s4"><a href="#tofollowhigh" class="active white-text">High</a></li>
+                                <li class="tab col s4"><a href="#tofollowmed" class="white-text">Medium</a></li>
+                                <li class="tab col s4"><a href="#tofollowlow" class="white-text">Low</a></li>
+                            </ul>
+                        </div>
+                        <div id="tofollowhigh" class="col s12 m12 l12">
+                            <ul id="tofollowhighprio" class="collapsible popout">
+                                
+                            </ul>
+                        </div>
+                        <div id="tofollowmed" class="col s12 m12 l12">
+                            <ul id="tofollowmedprio" class="collapsible popout">
+                                
+                            </ul>
+                        </div>
+                        <div id="tofollowlow" class="col s12 m12 l12">
+                            <ul id="tofollowlowprio" class="collapsible popout">
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row" id="tickethistory">
+    <div class="col m3 l3"></div>
+    <div class="col s12 m9 l9">
+        <div class="container">
+            <div class="card">
+                <div class="card-content grey darken-3">
+                    <h6 class="white-text center-align"><b>Ticket History</b></h6>
+                    <div class="divider"></div>
+                    <div class="row">
+                        <div class="col s12 m12 l12">
+                            <ul class="tabs grey darken-3">
+                                <li class="tab col s4"><a href="#tickethistoryhigh" class="active white-text">High</a></li>
+                                <li class="tab col s4"><a href="#tickethistorywmed" class="white-text">Medium</a></li>
+                                <li class="tab col s4"><a href="#tickethistorylow" class="white-text">Low</a></li>
+                            </ul>
+                        </div>
+                        <div id="tickethistoryhigh" class="col s12 m12 l12">
+                            <ul id="tickethistoryhighprio" class="collapsible popout">
+                                
+                            </ul>
+                        </div>
+                        <div id="tickethistorywmed" class="col s12 m12 l12">
+                            <ul id="tickethistorymedprio" class="collapsible popout">
+                                
+                            </ul>
+                        </div>
+                        <div id="tickethistorylow" class="col s12 m12 l12">
+                            <ul id="tickethistorylowprio" class="collapsible popout">
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div id="successModal" class="modal">
+        <div class="modal-content grey darken-3 center-align">
+            <i class="material-icons large green-text">verified_user</i>
+            <h5><b class="white-text">Successfully submitted!</b></h5>
+            <div class="col s12 m12 l12 center-align">
+                <button class="btn waves-effect waves-light black modal-close">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>
 <script src="/js/jquery-3.5.1.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-auth.js"></script>
 <script src="/js/materialize.min.js"></script>
+<script src="/js/adminPage.js"></script>
 </body>
 </html>

@@ -8,22 +8,22 @@
         storageBucket: "sonicsales-helpdesk.appspot.com",
         messagingSenderId: "213888930294",
         appId: "1:213888930294:web:ef09101b0fe18eae26b7d7"
-      };
+    };
 
-      firebase.initializeApp(firebaseConfig);
+    firebase.initializeApp(firebaseConfig);
 
-      $(document).ready(function(){
+    $(document).ready(function(){
         $('.modal').modal({
             dismissible: false
         });
-      });
+    });
 
-      const form            = document.querySelector('#adminloginform');
-      const loginEmail      = document.getElementById('email');
-      const loginPassword   = document.getElementById('password');
-      const errorMessage    = document.getElementById('erroeMessage');
+    const form            = document.querySelector('#adminloginform');
+    const loginEmail      = document.getElementById('email');
+    const loginPassword   = document.getElementById('password');
+    const errorMessage    = document.getElementById('erroeMessage');
 
-      form.addEventListener('submit', function(e){
+    form.addEventListener('submit', function(e){
         e.preventDefault();
         if(loginEmail.value == "" ||loginPassword.value == ""){
             e.preventDefault();
@@ -40,6 +40,13 @@
                 $('#loginErrorModal2').modal('open');
             });
         }
-      });
+    });
 
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+            window.location = 'welcome.html';
+        } else {
+            window.location = 'index.html';
+        }
+    });
 })();

@@ -51,7 +51,8 @@
                 problem:    form.problem.value,
                 priority:   form.priority.value,
                 message:    form.message.value,
-                date:       form.date.value
+                date:       form.date.value,
+                remarks:    null
             }).then(function(e){
                 ticketNum.textContent = ticketNumber;
                 $(document).ready(function(){
