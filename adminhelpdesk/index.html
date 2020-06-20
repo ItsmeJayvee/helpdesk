@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/materialize.min.css">
+    <title>Helpdesk Admin</title>
+</head>
+<body>
+<nav>
+    <div class="nav-wrapper blue accent-4">
+        <a href="#" class="brand-logo"><img src="/images/ssdi.png" height="55px"></a>
+    </div>
+</nav>
+<div class="row">
+    <div class="col m4 l4"></div>
+    <div class="col s12 m4 l4">
+        <div class="card">
+            <div class="card-content">
+                <h5 class="center-align"><b>ADMIN LOGIN</b></h5><br>
+                <div class="divider"></div><br>
+                <div class="row">
+                    <form id="adminloginform">
+                        <div class="input-field col s12 m12 l12">
+                            <i class="material-icons prefix">email</i>
+                            <input type="text" name="email" id="email" class="validate">
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="input-field col s12 m12 l12">
+                            <i class="material-icons prefix">lock_open</i>
+                            <input type="password" name="password" id="password" class="validate">
+                            <label for="password">Password</label>
+                        </div>
+                        <div class="input-field col s12 m12 l12 center-align">
+                            <button class="btn waves-effect waves-light indigo">Login<i class="material-icons right">send</i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col m4 l4"></div>
+</div>
+<div class="container">
+    <div id="loginErrorModal" class="modal">
+        <div class="modal-content center-align">
+            <i class="material-icons red-text large">report</i>
+            <h5><b class="red-text">Email & Password fields should not be empty!</b></h5>
+            <div class="input-field col s12 m12 l12 center-align">
+                <button class="btn waves-effect waves-light indigo modal-close">Confirm</button>
+            </div>
+        </div>
+    </div>
+    <div id="loginErrorModal2" class="modal">
+        <div class="modal-content center-align">
+            <i class="material-icons red-text large">report</i>
+            <h6 class="red-text"><b id="erroeMessage" class="red-text"></b></h6>
+            <div class="input-field col s12 m12 l12 center-align">
+                <button class="btn waves-effect waves-light indigo modal-close">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/jquery-3.5.1.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-auth.js"></script>
+<script src="/js/materialize.min.js"></script>
+<script src="/js/adminIndex.js"></script>
+</body>
+</html>
