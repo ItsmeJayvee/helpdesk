@@ -6,35 +6,30 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="shortcut icon" href="/images/icon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/css/materialize.min.css">
-    <title>Helpdesk Admin</title>
+    <title>Helpdesk Admin Register</title>
 </head>
 <body>
-<nav>
-    <div class="nav-wrapper blue accent-4">
-        <a href="#" class="brand-logo"><img src="/images/ssdi.png" height="55px"></a>
-    </div>
-</nav>
 <div class="row">
     <div class="col m4 l4"></div>
     <div class="col s12 m4 l4">
         <div class="card">
-            <div class="card-content">
-                <h5 class="center-align"><b>ADMIN LOGIN</b></h5><br>
+            <div class="card-content center-align">
+                <h5><b>Create Admin Account</b></h5>
                 <div class="divider"></div><br>
                 <div class="row">
-                    <form id="adminloginform">
+                    <form id="registerForm">
                         <div class="input-field col s12 m12 l12">
                             <i class="material-icons prefix">email</i>
                             <input type="text" name="email" id="email" class="validate">
                             <label for="email">Email</label>
                         </div>
                         <div class="input-field col s12 m12 l12">
-                            <i class="material-icons prefix">lock_open</i>
+                            <i class="material-icons prefix">lock</i>
                             <input type="password" name="password" id="password" class="validate">
                             <label for="password">Password</label>
                         </div>
                         <div class="input-field col s12 m12 l12 center-align">
-                            <button class="btn waves-effect waves-light indigo">Login<i class="material-icons right">send</i></button>
+                            <button class="btn waves-effect waves-light indigo">Submit<i class="material-icons right">send</i></button>
                         </div>
                     </form>
                 </div>
@@ -44,20 +39,29 @@
     <div class="col m4 l4"></div>
 </div>
 <div class="container">
-    <div id="loginErrorModal" class="modal">
+    <div id="successModal" class="modal">
         <div class="modal-content center-align">
-            <i class="material-icons red-text large">report</i>
-            <h5><b class="red-text">Email & Password fields should not be empty!</b></h5>
-            <div class="input-field col s12 m12 l12 center-align">
+            <i class="material-icons large green-text">verified_user</i>
+            <h5><b>Account Created!</b></h5>
+            <div class="input-field col s12 m12 l12">
+                <button class="btn waves-effect waves-light indigo">Confirm</button>
+            </div>
+        </div>
+    </div>
+    <div id="errorModal" class="modal">
+        <div class="modal-content center-align">
+            <i class="material-icons large red-text">report</i>
+            <h5><b class="red-text">Email & Password fields must not be empty!</b></h5>
+            <div class="input-field col s12 m12 l12">
                 <button class="btn waves-effect waves-light indigo modal-close">Confirm</button>
             </div>
         </div>
     </div>
-    <div id="loginErrorModal2" class="modal">
+    <div id="errorModal2" class="modal">
         <div class="modal-content center-align">
-            <i class="material-icons red-text large">report</i>
-            <h6 class="red-text"><b id="erroeMessage" class="red-text"></b></h6>
-            <div class="input-field col s12 m12 l12 center-align">
+            <i class="material-icons large red-text">report</i>
+            <h5><b id="errorMessage" class="red-text"></b></h5>
+            <div class="input-field col s12 m12 l12">
                 <button class="btn waves-effect waves-light indigo modal-close">Confirm</button>
             </div>
         </div>
@@ -67,6 +71,5 @@
 <script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-auth.js"></script>
 <script src="/js/materialize.min.js"></script>
-<script src="/js/adminIndex.js"></script>
 </body>
 </html>

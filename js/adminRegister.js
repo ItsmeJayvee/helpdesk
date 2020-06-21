@@ -18,26 +18,27 @@
         });
     });
 
-    const form            = document.querySelector('#adminloginform');
-    const loginEmail      = document.getElementById('email');
-    const loginPassword   = document.getElementById('password');
-    const errorMessage    = document.getElementById('erroeMessage');
+    const form         = document.querySelector('#registerForm');
+    const Regemail     = document.getElementById('email');
+    const Regpassword  = document.getElementById('password');
 
     form.addEventListener('submit', function(e){
         e.preventDefault();
-        if(loginEmail.value == "" ||loginPassword.value == ""){
+        if(Regemail.value == ""||Regpassword.value == ""){
             e.preventDefault();
             $(document).ready(function(){
-                $('#loginErrorModal').modal('open');
+                $('#errorModal').modal('open');
             });
         }else{
-            var email = loginEmail.value;
-            var password = loginPassword.value;
-            var promise = firebase.auth().signInWithEmailAndPassword(email, password);
+            var email       = Regemail.value;
+            var pass        = Regpassword.value;
+            var promise     = firebase.auth().createUserWithEmailAndPassword(email, pass);
+            
             promise.catch(function(error) {
-                e.preventDefault();
                 errorMessage.textContent = error.message;
-                $('#loginErrorModal2').modal('open');
+                $(document).ready(function(){
+                    $('#errorModal2').modal('open');
+                })
             });
         }
     });
